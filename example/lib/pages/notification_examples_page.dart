@@ -509,7 +509,23 @@ class _NotificationExamplesPageState extends State<NotificationExamplesPage> {
             SimpleButton('Send/Update the unlocked notification',
                 onPressed: () => showUnlockedNotification(2)),
 
-            /* ******************************************************************** */
+          /* ******************************************************************** */
+
+          TextDivisor( title: 'Notification Category with  fullScreenIntent' ),
+          TextNote(
+              """
+                This can set category of notification: 
+                //possible categories
+                
+                fullScreenIntent (android only)
+                 
+              """
+          ),
+          SimpleButton(
+              'Display delayed call notification',
+              onPressed: () => showCallNotification(3)
+          ),
+          /* ******************************************************************** */
 
             TextDivisor(title: 'Notification Importance (Priority)'),
             TextNote(

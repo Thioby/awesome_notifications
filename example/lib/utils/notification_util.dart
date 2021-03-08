@@ -2,18 +2,16 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
 // TO AVOID CONFLICT WITH MATERIAL DATE UTILS CLASS
 import 'package:awesome_notifications/awesome_notifications.dart'
     hide DateUtils;
 import 'package:awesome_notifications/awesome_notifications.dart' as Utils
     show DateUtils;
-
 import 'package:awesome_notifications_example/models/media_model.dart';
 import 'package:awesome_notifications_example/utils/common_functions.dart';
 import 'package:awesome_notifications_example/utils/media_player_central.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /* *********************************************
@@ -46,7 +44,8 @@ Future<void> showBasicNotification(int id) async {
     channelKey: 'basic_channel', //'basic_channel',//'custom_sound',//
     title: 'Simple Notification',
     body: 'Simple body',
-  ));
+  )
+      );
 }
 
 Future<void> showEmojiNotification(int id) async {
@@ -236,11 +235,48 @@ Future<void> showUnlockedNotification(int id) async {
 }
 
 /* *********************************************
+    CALL NOTIFICATION
+************************************************ */
+
+Future<void> showCallNotification(int id) async {
+
+  String importanceKey =
+      NotificationImportance.Max.toString().toLowerCase().split('.').last;
+  String channelKey = 'importance_' + importanceKey + '_channel';
+  String title = 'Importance levels (' + importanceKey + ')';
+  String body = 'Test of importance levels to ' + importanceKey;
+
+  await AwesomeNotifications().setChannel(NotificationChannel(
+    channelKey: channelKey,
+    channelName: title,
+    channelDescription: body,
+    importance: NotificationImportance.Max,
+    defaultColor: Colors.red,
+    ledColor: Colors.red,
+    vibrationPattern: highVibrationPattern,
+  ));
+
+  await AwesomeNotifications().createNotification(
+    content: NotificationContent(
+      id: id,
+      channelKey: channelKey,
+      title: title,
+      body: body,
+      payload: {'uuid': 'uuid-test'},
+      category: "call",
+      fullScreenIntent: true,
+    ),
+    schedule: NotificationSchedule(initialDateTime:  DateTime.now().add(Duration(seconds: 5)).toUtc()),
+  );
+}
+
+/* *********************************************
     NOTIFICATION CHANNELS MANIPULATION
 ************************************************ */
 
 Future<void> showNotificationImportance(
-    int id, NotificationImportance importance) async {
+    int id, NotificationImportance importance,
+    {String category, bool fullScreenIntent}) async {
   String importanceKey = importance.toString().toLowerCase().split('.').last;
   String channelKey = 'importance_' + importanceKey + '_channel';
   String title = 'Importance levels (' + importanceKey + ')';
@@ -257,11 +293,14 @@ Future<void> showNotificationImportance(
 
   await AwesomeNotifications().createNotification(
       content: NotificationContent(
-          id: id,
-          channelKey: channelKey,
-          title: title,
-          body: body,
-          payload: {'uuid': 'uuid-test'}));
+    id: id,
+    channelKey: channelKey,
+    title: title,
+    body: body,
+    payload: {'uuid': 'uuid-test'},
+    category: category,
+    fullScreenIntent: fullScreenIntent,
+  ));
 }
 
 /* *********************************************

@@ -747,6 +747,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
 
         try {
             Map<String, Object> pushData = call.arguments();
+
             PushNotification pushNotification = new PushNotification().fromMap(pushData);
 
             if(pushNotification == null){

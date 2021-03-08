@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
+import android.util.Log;
 
 import com.github.arturogutierrez.BadgesNotSupportedException;
 
@@ -215,6 +216,8 @@ public class NotificationBuilder {
         setSmallIcon(context, pushNotification, channel, builder);
         setLargeIcon(context, pushNotification, builder);
         setLayoutColor(context, pushNotification, channel, builder);
+        setCategory(pushNotification, builder);
+        setFullScreenIntent(pushNotification, builder, pendingIntent);
 
         setBadge(context, channel, builder);
 
@@ -296,6 +299,20 @@ public class NotificationBuilder {
 
     private void setBody(PushNotification pushNotification, NotificationCompat.Builder builder) {
         builder.setContentText(HtmlUtils.fromHtml(pushNotification.content.body));
+    }
+
+    private void setCategory(PushNotification pushNotification, NotificationCompat.Builder builder) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            String selectedCategory = StringUtils.getValueOrDefault(pushNotification.content.category, Notification.CATEGORY_EVENT);
+            builder.setCategory(selectedCategory);
+        }
+    }
+
+    private void setFullScreenIntent(PushNotification pushNotification, NotificationCompat.Builder builder, PendingIntent pendingIntent) {
+            Boolean fullScreenIntent = BooleanUtils.getValueOrDefault(pushNotification.content.fullScreenIntent, false);
+            Log.d("EEEEEEEEE", fullScreenIntent ? "true" : "false");
+            if(fullScreenIntent)
+                builder.setFullScreenIntent(pendingIntent, true);
     }
 
     private void setTitle(PushNotification pushNotification, NotificationChannelModel channelModel, NotificationCompat.Builder builder) {

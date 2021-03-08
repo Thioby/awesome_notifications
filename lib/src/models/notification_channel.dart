@@ -141,7 +141,7 @@ class NotificationChannel extends Model {
       'defaultRingtoneType':
           AssertUtils.toSimpleEnumString(defaultRingtoneType),
       'locked': locked,
-      'onlyAlertOnce': onlyAlertOnce
+      'onlyAlertOnce': onlyAlertOnce,
     };
   }
 
