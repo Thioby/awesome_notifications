@@ -9,7 +9,6 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.v4.media.session.MediaSessionCompat;
-import io.flutter.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
