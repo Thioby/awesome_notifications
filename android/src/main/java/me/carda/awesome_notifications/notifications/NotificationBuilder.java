@@ -425,7 +425,8 @@ public class NotificationBuilder {
 
             if(buttonProperties.enabled){
 
-                if(buttonProperties.buttonType == ActionButtonType.KeepOnTop) {
+                if(buttonProperties.buttonType == ActionButtonType.KeepOnTop
+                || buttonProperties.buttonType == ActionButtonType.InputField) {
 
                     actionPendingIntent = PendingIntent.getBroadcast(
                             context,
