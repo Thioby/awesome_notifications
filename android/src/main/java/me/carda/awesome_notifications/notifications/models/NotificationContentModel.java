@@ -1,6 +1,7 @@
 package me.carda.awesome_notifications.notifications.models;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +30,7 @@ public class NotificationContentModel extends Model {
     public String channelKey;
     public String title;
     public String body;
+    public String category;
     public String summary;
     public Boolean showWhen;
     public List<Object> actionButtons;
@@ -46,6 +48,7 @@ public class NotificationContentModel extends Model {
     public Long backgroundColor;
     public Integer progress;
     public String ticker;
+    public Boolean fullScreenIntent;
 
     public NotificationPrivacy privacy;
     public String privateMessage;
@@ -118,6 +121,10 @@ public class NotificationContentModel extends Model {
         progress    = getValueOrDefault(arguments, Definitions.NOTIFICATION_PROGRESS, Integer.class);
 
         ticker = getValueOrDefault(arguments, Definitions.NOTIFICATION_TICKER, String.class);
+
+        category = getValueOrDefault(arguments, Definitions.NOTIFICATION_CATEGORY, String.class);
+
+        fullScreenIntent = getValueOrDefault(arguments, Definitions.FULL_SCREEN_INTENT, Boolean.class);
 
         return this;
     }
@@ -194,6 +201,12 @@ public class NotificationContentModel extends Model {
 
         if(this.privateMessage != null)
             returnedObject.put(Definitions.NOTIFICATION_PRIVATE_MESSAGE, this.privateMessage);
+
+        if(this.category != null)
+            returnedObject.put(Definitions.NOTIFICATION_CATEGORY, this.category);
+
+        if(this.fullScreenIntent != null)
+            returnedObject.put(Definitions.FULL_SCREEN_INTENT, this.fullScreenIntent);
 
         return returnedObject;
     }

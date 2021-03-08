@@ -24,7 +24,9 @@ class NotificationContent extends BaseNotificationContent {
 
   String createdDate;
   String displayedDate;
+  String category;
 
+  bool fullScreenIntent;
   bool locked;
 
   NotificationContent({
@@ -53,7 +55,10 @@ class NotificationContent extends BaseNotificationContent {
       this.createdDate,
       this.displayOnForeground,
       this.displayOnBackground,
-      this.displayedDate})
+      this.displayedDate,
+      this.category,
+      this.fullScreenIntent,
+  })
       : super(
             id: id,
             channelKey: channelKey,
@@ -99,6 +104,12 @@ class NotificationContent extends BaseNotificationContent {
     this.displayedDate =
         AssertUtils.extractValue<String>(mapData, 'displayedDate');
 
+    this.category =
+        AssertUtils.extractValue<String>(mapData, 'category');
+
+    this.fullScreenIntent =
+        AssertUtils.extractValue<bool>(mapData, 'fullScreenIntent');
+
     return this;
   }
 
@@ -125,6 +136,8 @@ class NotificationContent extends BaseNotificationContent {
         'displayOnBackground': displayOnBackground,
         'createdDate': createdDate,
         'displayedDate': displayedDate,
+        'category': category,
+        'fullScreenIntent': fullScreenIntent,
       });
     return dataMap;
   }

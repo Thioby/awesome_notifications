@@ -9,7 +9,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e193cc25-4aee-4ee7-85e6-38b386ea7f1b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/me/carda/awesome_notifications/AwesomeNotificationsPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/me/carda/awesome_notifications/AwesomeNotificationsPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/me/carda/awesome_notifications/Definitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/me/carda/awesome_notifications/Definitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/me/carda/awesome_notifications/notifications/NotificationBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/me/carda/awesome_notifications/notifications/NotificationBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/me/carda/awesome_notifications/notifications/models/NotificationContentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/me/carda/awesome_notifications/notifications/models/NotificationContentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/pages/notification_examples_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/pages/notification_examples_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/utils/notification_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/utils/notification_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/models/notification_channel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/models/notification_channel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/models/notification_content.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/models/notification_content.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +41,9 @@
   </component>
   <component name="ProjectId" id="1gdlKvSd5jB5IWDBvSuAgX3lxo8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
   <component name="ProjectViewState">
     <option name="foldersAlwaysOnTop" value="false" />
     <option name="showLibraryContents" value="true" />
@@ -45,8 +60,8 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -77,6 +92,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -95,79 +111,12 @@
       <path value="$PROJECT_DIR$/example/ios/.symlinks/plugins/awesome_notifications" />
     </ignored-roots>
   </component>
-  <component name="WindowStateProjectService">
-    <state x="1165" y="383" key="#Notifications" timestamp="1611235843938">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1165" y="383" key="#Notifications/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1611235843938" />
-    <state x="960" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611269265377">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="960" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1611269265377" />
-    <state x="1498" y="226" key="#xdebugger.evaluate" timestamp="1614899259509">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1498" y="226" key="#xdebugger.evaluate/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1614899259509" />
-    <state x="92" y="92" width="2376" height="856" key="AVDManager" timestamp="1614884706846">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="92" y="92" width="2376" height="856" key="AVDManager/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1614884706846" />
-    <state x="784" y="290" width="412" height="525" key="AndroidProcessChooserDialog" timestamp="1614899766283">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="784" y="290" width="412" height="525" key="AndroidProcessChooserDialog/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1614899766283" />
-    <state x="1061" y="455" key="FileChooserDialogImpl" timestamp="1615202456848">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1061" y="455" key="FileChooserDialogImpl/0.0.2560.1400/3840.855.1920.1040@0.0.2560.1400" timestamp="1615202456848" />
-    <state width="2517" height="221" key="GridCell.Tab.0.bottom" timestamp="1615130664500">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="221" key="GridCell.Tab.0.bottom/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1615130664500" />
-    <state width="2517" height="221" key="GridCell.Tab.0.center" timestamp="1615130664500">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="221" key="GridCell.Tab.0.center/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1615130664500" />
-    <state width="2517" height="221" key="GridCell.Tab.0.left" timestamp="1615130664500">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="221" key="GridCell.Tab.0.left/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1615130664500" />
-    <state width="2517" height="221" key="GridCell.Tab.0.right" timestamp="1615130664500">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="221" key="GridCell.Tab.0.right/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1615130664500" />
-    <state x="359" y="186" key="SettingsEditor" timestamp="1606742798544">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="359" y="186" key="SettingsEditor/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1606742798544" />
-    <state width="1288" height="528" key="XDebugger.FullValuePopup" timestamp="1608045184997">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="1288" height="528" key="XDebugger.FullValuePopup/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1608045184997" />
-    <state x="661" y="301" width="723" height="550" key="find.popup" timestamp="1614978540238">
-      <screen x="0" y="25" width="1920" height="943" />
-    </state>
-    <state x="881" y="304" width="964" height="606" key="find.popup/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1614900216564" />
-    <state x="661" y="301" width="723" height="550" key="find.popup/0.25.1920.943@0.25.1920.943" timestamp="1614978540238" />
-    <state x="1312" y="244" key="run.anything.popup" timestamp="1610493651330">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1312" y="244" key="run.anything.popup/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1610493651330" />
-    <state x="810" y="229" width="927" height="744" key="search.everywhere.popup" timestamp="1610487008150">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="810" y="229" width="927" height="744" key="search.everywhere.popup/0.0.2560.1040/451.-900.1600.900@0.0.2560.1040" timestamp="1610487008150" />
-    <state x="690" y="338" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1614979209639">
-      <screen x="0" y="25" width="1920" height="943" />
-    </state>
-    <state x="690" y="338" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.25.1920.943@0.25.1920.943" timestamp="1614979209639" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/android/src/main/java/me/carda/awesome_notifications/notifications/NotificationBuilder.java</url>
-          <line>51</line>
+          <line>52</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -198,12 +147,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/example/lib/utils/notification_util.dart</url>
-          <line>168</line>
+          <line>160</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/models/notification_content.dart</url>
-          <line>76</line>
+          <line>81</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
@@ -219,13 +168,8 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <condition expression="channelKey == &quot;grouped&quot;" language="JAVA" />
           <url>file://$PROJECT_DIR$/lib/src/models/notification_channel.dart</url>
-          <line>165</line>
+          <line>166</line>
           <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/models/notification_channel.dart</url>
-          <line>163</line>
-          <option name="timeStamp" value="84" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -235,5 +179,9 @@
         <watch expression="groupKey" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
