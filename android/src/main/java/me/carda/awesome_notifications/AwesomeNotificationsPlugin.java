@@ -94,7 +94,9 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
     private List<ToDoCall> calls = new ArrayList<>();
 
     public AwesomeNotificationsPlugin() {
-        plugin = this;
+        if (plugin == null) {
+            plugin = this;
+        }
     }
 
     private boolean checkGooglePlayServices() {
