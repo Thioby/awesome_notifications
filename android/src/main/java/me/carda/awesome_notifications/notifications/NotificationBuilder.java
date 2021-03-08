@@ -412,7 +412,7 @@ public class NotificationBuilder {
                 Definitions.NOTIFICATION_BUTTON_ACTION_PREFIX + "_" + buttonProperties.key,
                 pushNotification,
                 (buttonProperties.buttonType == ActionButtonType.DisabledAction) ? AwesomeNotificationsPlugin.class :
-                (buttonProperties.buttonType == ActionButtonType.KeepOnTop) ?
+                (buttonProperties.buttonType == ActionButtonType.KeepOnTop || buttonProperties.buttonType == ActionButtonType.InputField) ?
                         KeepOnTopActionReceiver.class : getNotificationTargetActivityClass(context)
             );
 
