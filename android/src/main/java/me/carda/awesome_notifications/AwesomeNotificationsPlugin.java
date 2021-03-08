@@ -972,11 +972,9 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
     }
 
     private Boolean receiveNotificationAction(Intent intent, NotificationLifeCycle appLifeCycle) {
-        Log.d("TEST/Test", "Received Notification");
         ActionReceived actionModel = NotificationBuilder.buildNotificationActionFromIntent(applicationContext, intent);
 
         if (actionModel != null) {
-            Log.d("TEST/Test", "MODEL NOT NULL");
 
             actionModel.actionDate = DateUtils.getUTCDate();
             actionModel.actionLifeCycle = appLifeCycle;
@@ -990,12 +988,9 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
     }
 
     private void invokeMethod(String action, Object object) {
-        Log.d("TEST/Test", "Invoke method");
         if (pluginChannel != null) {
-            Log.d("TEST/Test", "invoked");
             pluginChannel.invokeMethod(action, object);
         } else {
-            Log.d("TEST/Test", "Add To list");
             calls.add(new ToDoCall(action, object));
         }
     }
