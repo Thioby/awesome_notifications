@@ -67,6 +67,7 @@ public class NotificationBuilder {
             Definitions.SELECT_NOTIFICATION,
             pushNotification
         );
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         Intent deleteIntent = buildNotificationIntentFromModel(
             context,
