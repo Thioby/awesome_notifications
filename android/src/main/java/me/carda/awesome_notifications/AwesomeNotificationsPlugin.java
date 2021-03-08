@@ -93,6 +93,8 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
 
     public static MediaSessionCompat mediaSession;
 
+    private List<ToDoCall> calls = new ArrayList<>();
+
     public AwesomeNotificationsPlugin() {
         plugin = this;
     }
@@ -180,7 +182,10 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
         mediaSession = new MediaSessionCompat(applicationContext, "PUSH_MEDIA");
 
         getApplicationLifeCycle();
-
+        for (ToDoCall call : this.calls) {
+            pluginChannel.invokeMethod(call.action, call.object);
+        }
+        calls.clear();
         // enableFirebase(context);
     }
 
@@ -290,7 +295,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
             CreatedManager.removeCreated(applicationContext, received.id);
             CreatedManager.commitChanges(applicationContext);
 
-            pluginChannel.invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_CREATED, content);
+            invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_CREATED, content);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -301,7 +306,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
         try {
 
             Serializable serializable = intent.getSerializableExtra(Definitions.EXTRA_BROADCAST_MESSAGE);
-            pluginChannel.invokeMethod(Definitions.CHANNEL_METHOD_RECEIVED_ACTION, serializable);
+            invokeMethod(Definitions.CHANNEL_METHOD_RECEIVED_ACTION, serializable);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -312,7 +317,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
         try {
 
             Serializable serializable = intent.getSerializableExtra(Definitions.EXTRA_BROADCAST_MESSAGE);
-            pluginChannel.invokeMethod(Definitions.CHANNEL_METHOD_MEDIA_BUTTON, serializable);
+            invokeMethod(Definitions.CHANNEL_METHOD_MEDIA_BUTTON, serializable);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -334,7 +339,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
             DisplayedManager.removeDisplayed(applicationContext, received.id);
             DisplayedManager.commitChanges(applicationContext);
 
-            pluginChannel.invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_DISPLAYED, content);
+            invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_DISPLAYED, content);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -356,7 +361,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
             DismissedManager.removeDismissed(applicationContext, received.id);
             DisplayedManager.commitChanges(applicationContext);
 
-            pluginChannel.invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_DISMISSED, content);
+            invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_DISMISSED, content);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -371,7 +376,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
                 try {
 
                     created.validate(applicationContext);
-                    pluginChannel.invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_CREATED, created.toMap());
+                    invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_CREATED, created.toMap());
                     CreatedManager.removeCreated(context, created.id);
                     CreatedManager.commitChanges(context);
 
@@ -390,7 +395,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
                 try {
 
                     displayed.validate(applicationContext);
-                    pluginChannel.invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_DISPLAYED, displayed.toMap());
+                    invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_DISPLAYED, displayed.toMap());
                     DisplayedManager.removeDisplayed(context, displayed.id);
                     DisplayedManager.commitChanges(context);
 
@@ -409,7 +414,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
                 try {
 
                     received.validate(applicationContext);
-                    pluginChannel.invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_DISMISSED, received.toMap());
+                    invokeMethod(Definitions.CHANNEL_METHOD_NOTIFICATION_DISMISSED, received.toMap());
                     DismissedManager.removeDismissed(context, received.id);
                     DismissedManager.commitChanges(context);
 
@@ -971,9 +976,29 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
 
             Map<String, Object> returnObject = actionModel.toMap();
 
-            pluginChannel.invokeMethod(Definitions.CHANNEL_METHOD_RECEIVED_ACTION, returnObject);
+
+            invokeMethod(Definitions.CHANNEL_METHOD_RECEIVED_ACTION, returnObject);
         }
         return true;
+    }
+
+    private void invokeMethod(String action, Object object) {
+        if (pluginChannel != null) {
+            pluginChannel.invokeMethod(action, object);
+        } else {
+            calls.add(new ToDoCall(action, object));
+        }
+    }
+
+    private class ToDoCall {
+
+        private String action;
+        private Object object;
+
+        public ToDoCall(String action, Object object) {
+            this.action = action;
+            this.object = object;
+        }
     }
 
 }
