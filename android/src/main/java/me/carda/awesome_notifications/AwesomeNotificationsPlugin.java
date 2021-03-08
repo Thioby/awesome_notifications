@@ -164,6 +164,10 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
         pluginChannel = channel;
 
         pluginChannel.setMethodCallHandler(this);
+        for (ToDoCall call : this.calls) {
+            pluginChannel.invokeMethod(call.action, call.object);
+        }
+        calls.clear();
 
         hasGooglePlayServices = checkGooglePlayServices();
 
