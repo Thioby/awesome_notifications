@@ -1,5 +1,6 @@
 package me.carda.awesome_notifications.notifications.models;
 
+import android.app.Person;
 import android.content.Context;
 
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ public class PushNotification extends Model {
     public NotificationContentModel content;
     public NotificationScheduleModel schedule;
     public List<NotificationButtonModel> actionButtons;
+    public List<NotificationMessageModel> messages;
+    public NotificationPersonModel person;
 
     public PushNotification(){}
 
@@ -28,6 +31,10 @@ public class PushNotification extends Model {
 
         schedule = extractNotificationSchedule(Definitions.PUSH_NOTIFICATION_SCHEDULE, parameters);
         actionButtons = extractNotificationButtons(Definitions.PUSH_NOTIFICATION_BUTTONS, parameters);
+//        messages = extractNotificationMessages(Definitions.PUSH_NOTIFICATION_MESSAGES, parameters);
+//        if (parameters.containsKey(Definitions.PUSH_NOTIFICATION_PERSON)) {
+//            this.person = new NotificationPersonModel().fromMap(getValueOrDefault(parameters, Definitions.PUSH_NOTIFICATION_PERSON, Map.class));
+//        }
 
         return this;
     }
@@ -113,6 +120,30 @@ public class PushNotification extends Model {
         if(actionButtons.isEmpty()) return null;
 
         return actionButtons;
+    }
+
+    private static List<NotificationMessageModel> extractNotificationMessages(String reference, Map<String, Object> parameters) {
+        if(parameters == null || !parameters.containsKey(reference)) return null;
+        Object obj = parameters.get(reference);
+
+        if(!(obj instanceof List<?>)) return null;
+        List<Object> actionButtonsData = (List<Object>) obj;
+
+        List<NotificationMessageModel> messages = new ArrayList<>();
+
+        for (Object objMessage: actionButtonsData) {
+            if(!(objMessage instanceof Map<?,?>)) return null;
+
+            Map<String, Object> map = (Map<String, Object>) objMessage;
+            if(map.isEmpty()) continue;
+
+            NotificationMessageModel button = new NotificationMessageModel().fromMap(map);
+            messages.add(button);
+        }
+
+        if(messages.isEmpty()) return null;
+
+        return messages;
     }
 
     public void validate(Context context) throws PushNotificationException {
