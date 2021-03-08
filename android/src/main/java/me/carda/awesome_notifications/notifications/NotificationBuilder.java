@@ -25,6 +25,7 @@ import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.Person;
 import androidx.core.app.RemoteInput;
 
 import me.carda.awesome_notifications.AwesomeNotificationsPlugin;
@@ -41,6 +42,7 @@ import me.carda.awesome_notifications.notifications.managers.DefaultsManager;
 import me.carda.awesome_notifications.notifications.models.NotificationButtonModel;
 import me.carda.awesome_notifications.notifications.models.NotificationChannelModel;
 import me.carda.awesome_notifications.notifications.models.NotificationContentModel;
+import me.carda.awesome_notifications.notifications.models.NotificationMessageModel;
 import me.carda.awesome_notifications.notifications.models.PushNotification;
 import me.carda.awesome_notifications.notifications.models.returnedData.ActionReceived;
 import me.carda.awesome_notifications.utils.BitmapUtils;
@@ -589,7 +591,7 @@ public class NotificationBuilder {
                 break;
 
             case Messaging:
-                if(setMessagingLayout(context, pushNotification.content, builder)) return;
+                if(setMessagingLayout(context, pushNotification, builder)) return;
                 break;
 
             case MediaPlayer:
@@ -705,8 +707,14 @@ public class NotificationBuilder {
         return true;
     }
 
-    private Boolean setMessagingLayout(Context context, NotificationContentModel contentModel, NotificationCompat.Builder builder) {
-        //TODO MISSING IMPLEMENTATION
+    private Boolean setMessagingLayout(Context context, PushNotification content, NotificationCompat.Builder builder) {
+        /*NotificationCompat.MessagingStyle style = new NotificationCompat.MessagingStyle(content.person.toPerson(context));
+        for (NotificationMessageModel message : content.messages) {
+            style.addMessage(new NotificationCompat.MessagingStyle.Message(
+                    message.text,
+
+            ));
+        }*/
         return true;
     }
 

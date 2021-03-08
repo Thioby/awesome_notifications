@@ -36,6 +36,8 @@ public interface Definitions {
     String PUSH_NOTIFICATION_CONTENT = "content";
     String PUSH_NOTIFICATION_SCHEDULE = "schedule";
     String PUSH_NOTIFICATION_BUTTONS = "actionButtons";
+    String PUSH_NOTIFICATION_MESSAGES = "messages";
+    String PUSH_NOTIFICATION_PERSON = "person";
 
     String SHARED_DEFAULTS = "defaults";
     String SHARED_MANAGER = "sharedManager";
@@ -131,6 +133,17 @@ public interface Definitions {
     String NOTIFICATION_BUTTON_ICON = "icon";
     String NOTIFICATION_BUTTON_LABEL = "label";
     String NOTIFICATION_BUTTON_TYPE = "buttonType";
+
+    String NOTIFICATION_PERSON_BOT = "bot";
+    String NOTIFICATION_PERSON_ICON = "icon";
+    String NOTIFICATION_PERSON_IMPORTANT = "important";
+    String NOTIFICATION_PERSON_KEY = "key";
+    String NOTIFICATION_PERSON_NAME = "name";
+    String NOTIFICATION_PERSON_URI = "uri";
+
+    String NOTIFICATION_MESSAGE_TEXT = "text";
+    String NOTIFICATION_MESSAGE_DATE = "date";
+    String NOTIFICATION_MESSAGE_PERSON = "person";
 
     String NOTIFICATION_PAYLOAD = "payload";
     String NOTIFICATION_INITIAL_FIXED_DATE = "fixedDate";
