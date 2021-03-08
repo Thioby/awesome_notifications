@@ -80,6 +80,7 @@ import me.carda.awesome_notifications.utils.StringUtils;
 public class AwesomeNotificationsPlugin extends BroadcastReceiver implements FlutterPlugin, MethodCallHandler, PluginRegistry.NewIntentListener, ActivityAware {
 
     public static boolean hasGooglePlayServices;
+    public static AwesomeNotificationsPlugin plugin;
 
     public static NotificationLifeCycle appLifeCycle = NotificationLifeCycle.AppKilled;
 
@@ -91,6 +92,10 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
     private Context applicationContext;
 
     public static MediaSessionCompat mediaSession;
+
+    public AwesomeNotificationsPlugin() {
+        plugin = this;
+    }
 
     private boolean checkGooglePlayServices() {
         // TODO MISSING IMPLEMENTATION. FIREBASE SERVICES DEMANDS GOOGLE PLAY SERVICES.
@@ -951,7 +956,7 @@ public class AwesomeNotificationsPlugin extends BroadcastReceiver implements Flu
         }
     }
 
-    private Boolean receiveNotificationAction(Intent intent) {
+    public Boolean receiveNotificationAction(Intent intent) {
         return receiveNotificationAction(intent, getApplicationLifeCycle());
     }
 
