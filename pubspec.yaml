@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  platform: ^3.0.0
-  intl: ^0.17.0
+  platform: 2.2.1
+  intl: 0.16.1
 
 dev_dependencies:
   flutter_test:
