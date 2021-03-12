@@ -190,6 +190,7 @@ public interface Definitions {
   String NOTIFICATION_CATEGORY = "category";
   String NOTIFICATION_ALLOW_WHILE_IDLE = "allowWhileIdle";
   String FULL_SCREEN_INTENT = "fullScreenIntent";
+  String DISMISS_REMOTELY = "dismissRemotely";
 
   Map<String, Object> initialValues = new HashMap<String, Object>() {{
     put(Definitions.FIREBASE_ENABLED, true);
@@ -225,6 +226,7 @@ public interface Definitions {
     put(Definitions.NOTIFICATION_ALLOW_WHILE_IDLE, false);
     put(Definitions.NOTIFICATION_ONLY_ALERT_ONCE, false);
     put(Definitions.FULL_SCREEN_INTENT, false);
+    put(Definitions.DISMISS_REMOTELY, false);
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
       put(Definitions.NOTIFICATION_CATEGORY, Notification.CATEGORY_EVENT);
