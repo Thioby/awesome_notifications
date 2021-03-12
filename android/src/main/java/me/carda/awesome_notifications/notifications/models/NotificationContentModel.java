@@ -60,6 +60,7 @@ public class NotificationContentModel extends Model {
     public NotificationLifeCycle displayedLifeCycle;
     public String createdDate;
     public String displayedDate;
+    public Boolean dismissRemotely;
 
     public NotificationContentModel(){}
 
@@ -125,6 +126,8 @@ public class NotificationContentModel extends Model {
         category = getValueOrDefault(arguments, Definitions.NOTIFICATION_CATEGORY, String.class);
 
         fullScreenIntent = getValueOrDefault(arguments, Definitions.FULL_SCREEN_INTENT, Boolean.class);
+
+        dismissRemotely = getValueOrDefault(arguments, Definitions.DISMISS_REMOTELY, Boolean.class);
 
         return this;
     }
