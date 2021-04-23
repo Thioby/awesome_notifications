@@ -243,17 +243,20 @@ Future<void> showCallNotification(int id) async {
   String importanceKey =
       NotificationImportance.Max.toString().toLowerCase().split('.').last;
   String channelKey = 'importance_' + importanceKey + '_channel';
-  String title = 'Importance levels (' + importanceKey + ')';
+  String title = 'channe_importnce_max';
   String body = 'Test of importance levels to ' + importanceKey;
 
   await AwesomeNotifications().setChannel(NotificationChannel(
     channelKey: channelKey,
     channelName: title,
     channelDescription: body,
-    importance: NotificationImportance.Max,
+    importance: NotificationImportance.High,
     defaultColor: Colors.red,
     ledColor: Colors.red,
     vibrationPattern: highVibrationPattern,
+    enableVibration: true,
+    onlyAlertOnce: false,
+    defaultPrivacy: NotificationPrivacy.Public,
   ));
 
   await AwesomeNotifications().createNotification(
@@ -264,7 +267,7 @@ Future<void> showCallNotification(int id) async {
       body: body,
       payload: {'uuid': 'uuid-test'},
       category: "call",
-      fullScreenIntent: true,
+      fullScreenIntent: false,
     ),
     schedule: NotificationSchedule(initialDateTime:  DateTime.now().add(Duration(seconds: 5)).toUtc()),
   );
